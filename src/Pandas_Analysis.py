@@ -35,7 +35,7 @@ TAGS=['tags']
 BLURB_TITLE=['blurb','partype','title']
 AINFO=['attack', 'defense', 'magic', 'difficulty']
 
-STATS=['stats.hpperlevel', 'stats.mp', 'stats.mpperlevel',
+STATS=['stats.hpperlevel','hp', 'stats.mp', 'stats.mpperlevel',
        'move_speed', 'stats.armor', 'stats.armorperlevel', 'stats.spellblock',
        'stats.spellblockperlevel', 'stats.attackrange', 'stats.hpregen',
        'stats.hpregenperlevel', 'stats.mpregen', 'stats.mpregenperlevel',
@@ -43,7 +43,7 @@ STATS=['stats.hpperlevel', 'stats.mp', 'stats.mpperlevel',
        'stats.attackdamageperlevel', 'stats.attackspeedperlevel',
        'stats.attackspeed']
 
-role_analysis= ['name']+AINFO + STATS
+role_analysis= ['name']+ AINFO + STATS
 scaling_analysis=AINFO
 correlation_analysis=AINFO
 oop_csv=AINFO
