@@ -43,23 +43,29 @@ STATS=['stats.hpperlevel', 'stats.mp', 'stats.mpperlevel',
        'stats.attackdamageperlevel', 'stats.attackspeedperlevel',
        'stats.attackspeed']
 
-ROLS_ANALYSIS_CSV=[]
+role_analysis= ['name']+AINFO + STATS
+scaling_analysis=AINFO
+correlation_analysis=AINFO
+oop_csv=AINFO
+ROLS_ANALYSIS_CSV=champions[role_analysis]
 
-SCALING_ANALYSIS_CSV=[]
+SCALING_ANALYSIS_CSV=champions[scaling_analysis]
 
-CORRELATION_ANALYSIS_CSV=[]
+CORRELATION_ANALYSIS_CSV=champions[correlation_analysis]
 
-OOP_CSV=[]
+OOP_CSV =champions[oop_csv]
 
-preview = champions.head(10)
-
-csv_path = Path(r'../Raw_Data/League_of_Legends.csv')
-champions.to_csv(csv_path, index=True, encoding='utf-8-sig')
-
-print(f'Champion count: {len(champions)}')
-print(f'CSV saved: {csv_path.resolve()}')
+All_Csv = {
+    'Rols_Analysis.csv':        ROLS_ANALYSIS_CSV,
+    'Scaling_Analysis.csv':     SCALING_ANALYSIS_CSV,
+    'Correlation_Analysis.csv': CORRELATION_ANALYSIS_CSV,
+    'OOP.csv':                  OOP_CSV,
+}
+for Csv_file_name,Data_to_Csv in All_Csv.items():
+    csv_path = Path(fr'../Raw_Data/{Csv_file_name}')
+    Data_to_Csv.to_csv(csv_path, index=False, encoding='utf-8-sig')
 
 # A final expression is rendered as the notebook cell's visible table output.
-print(preview)
-print(champions.columns)
+# print(ROLS_ANALYSIS_CSV)
+# print(champions.columns)
 
