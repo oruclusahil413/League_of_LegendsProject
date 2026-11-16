@@ -5,7 +5,7 @@ from pathlib import Path
 import pandas as pd
 
 # Load the champion data from the project's Raw_Data directory.
-data_path = Path('../Raw_Data/League_of_Legends.json')
+data_path = Path('../../Raw_Data/League_of_Legends.json')
 with data_path.open(encoding='utf-8') as file:
     raw_data = json.load(file)
 
