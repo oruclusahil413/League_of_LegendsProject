@@ -1,4 +1,4 @@
-from General_Cleaning import ROLS_ANALYSIS_CSV
+from Pandas.General_Cleaning import ROLS_ANALYSIS_CSV
 import pandas as pd
 
 df=ROLS_ANALYSIS_CSV
