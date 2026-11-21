@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 from Pandas.Tag_analysis_Pandas import (df_flat,roles_1_countdictionary,
-                                        roles_2_countdictionary)
+                                        roles_2_countdictionary,Roles_1,Roles_2,roleslist)
 
 "PLOT"
 color_palette = {
@@ -52,4 +52,26 @@ axes[1].pie(x=roles_2_countdictionary.values(),
                 'fontweight':'bold'
             }
             )
+plt.show()
+
+fig,axes=plt.subplots(1,2,figsize=(18,6),sharey=True)
+plt.subplots_adjust(wspace=0.05)
+
+sns.boxplot(data=Roles_1,
+            x="tags",y='difficulty',
+            hue='tags',
+            legend=False,
+            ax=axes[0],
+            hue_order=roleslist,
+            order=roleslist,
+            palette=mycolor
+                         )
+sns.boxplot(data=Roles_2,
+            x='tags',y='difficulty',
+            hue='tags',
+            legend=False,
+            ax=axes[1],
+            hue_order=roleslist,
+            order=roleslist,
+            palette=mycolor)
 plt.show()
