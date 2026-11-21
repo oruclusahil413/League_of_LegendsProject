@@ -41,6 +41,12 @@ for role in roleslist:
             else:
                 roles_2_countdictionary[role] = 1
 
+Roles_2[['tags','difficulty']]
+Roles_1[['tags','difficulty']]
+
+print(Roles_1[Roles_1['tags']=='Support']['difficulty'])
+
+
 print(roleslist)
 print(roles_1_countdictionary)
 print(roles_2_countdictionary)
